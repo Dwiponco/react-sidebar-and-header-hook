@@ -3,11 +3,40 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from "react-redux"
+import {createStore} from "redux"
+
+const globalState = {
+  totalOrder : 0
+}
+
+// reducer
+const rootReducer = (state = globalState, action) => {
+  switch(action.type) {
+    case "PLUS_ORDER" : 
+      return {
+        ...state,
+        totalOrder : state.totalOrder + 1
+      }
+    case "MINUS_ORDER" : 
+      if(state.totalOrder > 0){
+        return {
+          ...state,
+          totalOrder : state.totalOrder - 1
+        }
+      }
+    default : 
+    return state
+  }
+}
+
+// store
+const store = createStore(rootReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
