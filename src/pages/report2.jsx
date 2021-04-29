@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
-import dumyImage from "../fature2.jpeg"
+import dumyImage from "../feature2.jpeg"
 
 const TitleWrap = styled.div`
     display: flex;
