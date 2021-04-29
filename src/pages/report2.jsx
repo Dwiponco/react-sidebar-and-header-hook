@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from "styled-components"
+import dumyImage from "../fature2.jpeg"
 
 const TitleWrap = styled.div`
     display: flex;
@@ -16,6 +17,9 @@ export default class Reports2 extends Component {
     render() {
         return (
             <TitleWrap>
+                <div>
+                    <img src={dumyImage} alt=""/>
+                </div>
                 <TitleOverview>
                     REPORT  2
                 </TitleOverview>
